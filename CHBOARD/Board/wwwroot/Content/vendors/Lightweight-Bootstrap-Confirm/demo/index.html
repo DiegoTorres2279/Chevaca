@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Bootstrap Confirm Examples</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container" style="margin:50px auto;">
+    <h1>jQuery Bootstrap Confirm Examples</h1>
+    <div class="jquery-script-ads" style="margin:50px auto;"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+		<div class="row">
+			<div class="col-md-12">
+				<a href="page.php?delete=1" class="btn btn-danger">Confirm 1</a>
+				<a href="page.php?delete=2" class="btn btn-primary">Confirm 2</a>
+				<a href="#" class="btn btn-success">Message 1</a>
+				<a href="#" class="btn btn-info">Message 2</a>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="well" id="response"></div>
+			</div>
+		</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="../bootstrap-confirm.js"></script>
+<script>
+$(document).ready(function() {
+	// DEFAULTS
+	// $.confirm.defaults.template = 'primary';
+	// $.confirm.defaults.templateOk = 'primary';
+
+	var $response = $('#response');
+
+	/*
+	 * 
+	 */
+	$('.btn-danger').click(function(e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$.confirm({
+			message: 'Delete This Entry?',
+			onOk: function() {
+				$response.html('ajax send request: ' + url);
+			}
+		});
+	});
+
+	/*
+	 *
+	 */
+	$('.btn-primary').click(function(e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$.confirm({
+			template: 'primary',
+			templateOk: 'primary',
+			message: 'Delete This Entry?',
+			onOk: function() {
+				$response.html('ajax send request: ' + url);
+			},
+			onCancel: function() {
+				$response.html('Canceled!');
+			}
+		});
+	});
+
+	/*
+	 *
+	 */
+	$('.btn-success').click(function(e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$.confirm({
+			title: 'Sucesso!',
+			titleIcon: 'glyphicon glyphicon-ok',
+			template: 'success',
+			templateOk: 'success',
+			message: 'Success!',
+			buttonOk: false,
+			buttonCancel: false
+		});
+	});
+
+	/*
+	 *
+	 */
+	$('.btn-info').click(function(e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$.confirm({
+			title: 'Info',
+			titleIcon: 'glyphicon glyphicon-info-sign',
+			template: 'info',
+			templateOk: 'info',
+			message: 'Info Message',
+			labelOk: 'Okey',
+			buttonCancel: false,
+			onOk: function() {
+				$response.html('Okey!');
+			}
+		});
+	});
+});
+</script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

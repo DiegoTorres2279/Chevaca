@@ -1,0 +1,31 @@
+.bordiado{
+    border-radius: 20px;
+}
+
+.centerInfo{
+    text-align: center;
+}
+
+.est_table{
+    border:2px solid #34495e;
+    border-radius: 20px;
+    padding-bottom:50px;
+}
+
+.btn.btn-inline.btn-primary.chevaca{
+    background: #34495e;
+    border-color: #34495e;
+    color: #FAFAFA;
+}
+
+.btn.btn-inline.btn-small.chevaca{
+    background: #34495e;
+    border-color: #34495e;
+    color: #fafafa;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.panel-heading{
+    font-weight: bold;
+}

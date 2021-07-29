@@ -1,0 +1,25 @@
+.btn-glyphicon {
+    padding:8px;
+    background:#73879C;
+    margin-right:4px;
+}
+
+.icon-btn {
+    padding: 1px 15px 3px 2px;
+    border-radius:50px;
+    background: #2A3F54;
+    border-color: #73879C;
+}
+
+.text-danger{
+    color: #2A3F54 !important;
+}
+
+.btn:hover {
+    background-color: #73879C;
+    border-color: #FFFFFF;
+}
+
+/*pendiente*/
+/*El icono del home cuando hace el efecto hover esta mal*/
+/*Despues del click el borde se muestra en color rojo*/

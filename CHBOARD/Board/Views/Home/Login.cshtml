@@ -1,0 +1,123 @@
+@model Board.Models.VM_Login
+
+@{
+    Layout = "";    
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <title>Chevaca Agrotecnología | </title>
+
+    <!-- Bootstrap -->
+    <link href="~/Content/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Content/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/vendors/font-awesome-5/css/all.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Content/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Content/vendors/animate.css/animate.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="~/Content/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form asp-action="Login" method="post" id="login">
+              <h1>Iniciar sesión</h1>
+              <div class="form-group">
+                  @*<label asp-for="Username" class="control-label"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>*@
+                  @Html.LabelFor(v => v.Username)
+                  @Html.TextBoxFor(v => v.Username, "", new { @class = "form-control" })
+                  @Html.ValidationMessageFor(v => v.Username, "", new { @class = "text-danger" })
+              </div>
+              <div>
+                  @*<label asp-for="Password" class="control-label"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>*@
+
+                  @Html.LabelFor(v => v.Password)
+                  @Html.TextBoxFor(v => v.Password, "", new { @class = "form-control" })
+                  @Html.ValidationMessageFor(v => v.Password, "", new { @class = "text-danger" })
+              </div>
+              <div class="form-group">
+                @* <input type="submit" value="Login" class="btn btn-primary" /> *@              
+                <a href="javascript:{}" onclick="document.getElementById('login').submit();">Log in</a>
+                @* <a class="btn btn-default submit" onclick="form.submit()" href="#">Log in</a> *@
+                <a class="reset_pass" href="#">Recuperar contraseña</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  <a href="#signup" class="to_register"> Solicitar una cuenta nueva</a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fas fa-cow"></i></h1>
+                  <p>© 2021 Chevaca Agrotecnología. Todos los derechos reservados.</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div id="register" class="animate form registration_form">
+          <section class="login_content">
+            <form>
+              <h1>Create Account</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Email" required="" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" />
+              </div>
+              <div>
+                <a class="btn btn-default submit" href="index.html">Submit</a>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  <a href="#signin" class="to_register"> Ingresar </a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+                <div>
+                  <h1><i class="fa fa-paw"></i> Chevaca Agrotecnología</h1>
+                  <p>© 2016 All Rights Reserved. Chevaca Agrotecnología.</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

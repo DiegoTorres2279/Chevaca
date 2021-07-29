@@ -1,0 +1,166 @@
+@model Board.Models.VM_EstanciaOrg_SP
+
+@* Gonza arregla esto ==> se tiene que ver centrado y sin hoover *@
+
+@section Scripts{
+    <script src="~/Content/vendors/validator/validator.js"></script>
+    @* <script src="~/Content/vendors/validator/multifield.js"></script> *@
+    @* <script src="~/Content/vendors/attentionJS/dist/attention.js"></script> *@
+    @* <script src="~/Content/vendors/BootstrapConfirm/BootConfirm.js"></script> *@
+    @* <script src="~/Content/vendors/Lightweight-Bootstrap-Confirm/bootstrap-confirm.js"></script> *@
+    <script src="~/js/ReporrEstanciaOrg.js"></script>
+}
+
+@section AddToHead{
+    @* <link rel="stylesheet" href="~/Content/vendors/attentionJS/dist/attention.css" /> *@
+    <link rel="stylesheet" href="~/css/reportEstanciaOrg.css">
+}
+
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="col-md-12 col-sm-12  ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Table design</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="centerInfo" id="orgInfo">
+              <label asp-for="vmEstOrg.Land_ID"></label>
+              @Html.TextBoxFor(vm => vm.vmEstOrg.Land_ID, new { id = "txb_estanciaID", disabled="disabled" } )
+
+              <label asp-for="vmEstOrg.Name"></label>
+              @Html.TextBoxFor(m => m.vmEstOrg.Name, new { id = "txb_estancia_name", disabled="disabled" } )
+
+              <label asp-for="vmEstOrg.DisplayName"></label>
+              @Html.TextBoxFor(vm => vm.vmEstOrg.DisplayName, new { id = "txb_estancia_displayName", disabled="disabled" } )
+              
+              @* <a href="#nada" class="btn btn-inline btn-small chevaca" id="btn_CambiarOrg">Cambiar</a> *@
+              @* <button type="button" class="btn-primary btn btn-sm" id="btn_CambiarOrg">Cambiar Org</button> *@
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table">
+                <thead>
+                <tr class="headings">
+                  <th class="column-title">@Html.DisplayNameFor(model => model.vmEstOrg.rut)</th>
+                  <th class="column-title">@Html.DisplayNameFor(model => model.vmEstOrg.Name) </th>
+                  <th class="column-title">@Html.DisplayNameFor(model => model.vmEstOrg.DisplayName) </th>
+                  <th class="column-title">@Html.DisplayNameFor(model => model.vmEstOrg.telefono) </th>
+                  <th class="column-title">@Html.DisplayNameFor(model => model.vmEstOrg.CanHaveGateways) </th>
+                  <th class="column-title">@Html.DisplayNameFor(model => model.vmEstOrg.MaxGateway) </th>
+                  <th class="column-title">@Html.DisplayNameFor(model => model.vmEstOrg.MaxDevice) </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr class="even pointer">
+                  <td class=" ">@Html.DisplayFor(m => m.vmEstOrg.rut)</td>
+                  <td class=" ">@Html.DisplayFor(m => m.vmEstOrg.Name)</td>
+                  <td class=" ">@Html.DisplayFor(m => m.vmEstOrg.DisplayName)</td>
+                  <td class=" ">@Html.DisplayFor(m => m.vmEstOrg.telefono)</td>
+                  <td class=" ">@Html.DisplayFor(m => m.vmEstOrg.CanHaveGateways)</td>
+                  <td class=" ">@Html.DisplayFor(m => m.vmEstOrg.MaxGateway)</td>
+                  <td class=" ">@Html.DisplayFor(m => m.vmEstOrg.MaxDevice)</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Service Profiles</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div class="table-responsive">
+                  <table class="table table-striped jambo_table">
+                    <thead>
+                    <tr class="headings">
+                      <th class="column-title">@Html.DisplayNameFor(model => model.vmSP.ServiceProfileID)</th>
+                      <th class="column-title">@Html.DisplayNameFor(model => model.vmSP.Name) </th>
+                      <th class="column-title">@Html.DisplayNameFor(model => model.vmSP.networkServerID) </th>
+                      <th class="column-title">@Html.DisplayNameFor(model => model.vmSP.gatewayMetadata) </th>
+                      <th class="column-title">@Html.DisplayNameFor(model => model.vmSP.networkGeoloc) </th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr class="even pointer">
+                      <td class=" ">@Html.DisplayFor(m => m.vmSP.ServiceProfileID)</td>
+                      <td class=" ">@Html.DisplayFor(m => m.vmSP.Name)</td>
+                      <td class=" ">@Html.DisplayFor(m => m.vmSP.networkServerID)</td>
+                      <td class=" ">@Html.DisplayFor(m => m.vmSP.gatewayMetadata)</td>
+                      <td class=" ">@Html.DisplayFor(m => m.vmSP.networkGeoloc)</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="x_panel centerInfo">
+              @* <button class="btn-primary btn" id="btn_AgregarCamposSistemas">Agregar Campos/Sistemas</button> *@
+              @* <button class="btn-primary btn" id="btn_AgregarDuenos">Agregar Duenos</button> *@
+              <a href="AddEstanciaCampo" class="btn btn-inline btn-primary chevaca" id="btn_AgregarCamposSistemas" >Agregar Campos/Sistemas</a>
+              <a href="#nada" class="btn btn-inline btn-primary chevaca" id="btn_AgregarDuenos">Agregar Duenos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalBuscarOrg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Cerrar</span></button>
+                <h4 class="modal-title" id="myModalLabel">Busqueda de Parroquias</h4>
+            </div>
+            <div id="BusquedaParroquia" class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="stock_bodega">Busqueda por:</label>
+                        <select class="form-control" style="width: 40%" id="stock_bodega">
+                            <option>Nombre</option>
+                        </select>
+                        <label for="texto_buscar">Texto a Buscar:</label>
+                        <input type="text" class="form-control" id="texto_buscar">
+                    </div>
+                    <div style="position: relative; overflow: auto; width: 100%; height: 200px;" class="dataTables_scrollBody">
+                        <table style="width: 100%;" id="busqueda_parroquia" class="display nowrap dataTable no-footer" cellspacing="0" width="100">
+                            <thead>
+                                <tr>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>001</td>
+                                  <td>La Troncal</td>
+                                  <td>A</td>
+                                </tr>
+                                <tr>
+                                  <td>002</td>
+                                  <td>San Joose</td>
+                                  <td>A</td>
+                                </tr>
+                             </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-inline btn-primary chevaca">Seleccionar</button>
+              <button type="button" class="btn btn-inline btn-primary chevaca" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>  <!-- Modal Escenario-->

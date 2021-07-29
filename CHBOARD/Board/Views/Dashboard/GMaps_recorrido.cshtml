@@ -1,0 +1,79 @@
+﻿@section Scripts
+{
+}
+<!--<div class="modal-header">
+    <h4 class="modal-title">Recorrido individual</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <div class="row-short">
+        <div class="col-12">
+            <div class="row col-12 input-group">
+                <h6 style="margin: auto;">Nodo&nbsp;</h6><input type="text" id="txtNodo_nombre" class="form-control " readonly />
+            </div>
+            <br />
+            <div class="row input-group" style="">-->
+@*display:grid; grid-template-areas:'a b c'*@
+<!--<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                <h6 style="margin: auto;">Últimos minutos&nbsp;</h6>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+
+                <input type="text" id="txtCantidadMinutos" maxlength="3" class="form-control" placeholder="Últimos 10 minutos" />
+                <span class="input-group-btn">
+                    <a role="button" href="#" name="search" class="btn btn-sm btn-primary" onclick="actualizarHistorial()" style="">
+                        <i class="glyphicon glyphicon-cog"></i>
+                    </a>
+                </span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="form-horizontal">
+    <div id="GMaps_map_recorrido_ID" style="width: 100%; height: 500px;"></div>-->
+@*<div class="clearfix">&nbsp;</div>*@
+<!--</div>
+    <br />
+    <div class="panel panel-default"><span>Cantidad de resultados:</span>&nbsp;<span id="divCantidadResultados">0</span></div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+</div>-->
+
+<div id="GMaps_map_recorrido_modal_ID_modal" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Recorrido individual</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="input-group mb-2">
+                    <span class="input-group-text">Nombre nodo</span>
+                    <input type="text" id="txtNodo_nombre" class="form-control " readonly />
+                </div>
+
+                <div class="d-flex flex-row bd-highlight mb-3" style="">
+                    <span class="input-group-text">Últimos minutos</span>
+                    <input type="text" id="txtCantidadMinutos" maxlength="3" class="form-control" placeholder="Minutos" value="10">
+                    <a role="button" href="#" class="btn btn-sm btn-primary" onclick="actualizarHistorial()">
+                        <i class="bi bi-check-square"></i>
+                    </a>
+                </div>
+
+                <div class="form-horizontal">
+                    <div id="GMaps_map_recorrido_ID" style="width: 100%; height: 500px;"></div>
+                </div>
+                <div class="panel panel-default"><span>Cantidad de resultados:</span>&nbsp;<span id="divCantidadResultados">0</span></div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cerrarModal_recorrido()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

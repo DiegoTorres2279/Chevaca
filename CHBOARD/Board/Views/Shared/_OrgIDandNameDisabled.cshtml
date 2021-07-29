@@ -1,0 +1,23 @@
+@model Board.Models.VM_EstOrg_CampoApp
+<div class="outer-div">
+    <div class="field item form-group inner-div">
+        <label asp-for="OrgID" class="col-form-label label-align"></label>
+        <span asp-validation-for="OrgID" class="required"></span>
+        <div>
+            <input asp-for="OrgID" class="form-control" id="txb_EstanciaOrg_OrgID" required="required" disabled="disabled"/>
+        </div>
+    </div>
+    <div class="field item form-group inner-div">
+        <label asp-for="EstanciaOrgName" class="label-align"></label>
+        <span asp-validation-for="EstanciaOrgName" class="required"></span>
+        <div>
+            <input asp-for="EstanciaOrgName" class="form-control" id="txb_EstanciaOrg_OrgName" required="required" disabled="disabled"/>
+        </div>
+    </div>
+    @if (TempData["NuevaEstanciaOrg"] == null)
+    {
+        <div class="inner-div">
+            <input id="btn_cambiar_org" type="button" class="btn btn-primary" name="Cambiar" value="Cambiar">
+        </div>
+    }
+</div>

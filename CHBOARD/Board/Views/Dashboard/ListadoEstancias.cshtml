@@ -1,0 +1,95 @@
+@using Domain.Chevaca
+@model Board.Models.VM_List_Ranchs
+
+@section Scripts
+{
+  <script src="~/js/Listadoestancias.js"></script>
+}
+
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Listado de lands</h3>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    
+    <div class="centerInfo" id="orgInfo">
+      <label asp-for="EstanciaID"></label>
+      @Html.TextBoxFor(vm => vm.EstanciaID, new { id = "txb_estanciaID" } )
+
+      <label asp-for="Razon_social"></label>
+      @Html.TextBoxFor(m => m.Razon_social, new { id = "txb_estancia_name" } )
+
+      <label asp-for="Nombre"></label>
+      @Html.TextBoxFor(vm => vm.Nombre, new { id = "txb_estancia_displayName" } )
+      
+      <a href="#" class="btn btn-inline btn-small chevaca" id="btn_CambiarOrg">Filtrar</a>
+    </div>    
+      
+    <div class="table-responsive">
+      <table class="table table-striped jambo_table bulk_action">
+        <thead>
+        <tr class="headings">
+          @if (Model.UsuarioAutorizado())
+          {
+            <th>
+              <input type="checkbox" id="check-all" class="flat">
+            </th>
+          }
+
+          <th class="column-title"> @Html.DisplayNameFor(m => m.EstanciaID)</th>
+          <th class="column-title">@Html.DisplayNameFor(m => m.OrganizacionID)</th>
+          <th class="column-title">@Html.DisplayNameFor(m => m.RUT)</th>
+          <th class="column-title">@Html.DisplayNameFor(m => m.Razon_social)</th>
+          <th class="column-title">@Html.DisplayNameFor(m => m.Nombre)</th>
+          <th class="column-title">@Html.DisplayNameFor(m => m.AdmiteGateways)</th>
+          <th class="column-title">Cant. Campos</th>
+          <th class="column-title no-link last"><span class="nobr">Action</span>
+          </th>
+          <th class="bulk-actions" colspan="7">
+            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+          </th>
+        </tr>
+        </thead>
+
+        <tbody id="tbody_lista_estancias">
+        @foreach(Ranch est in Model.lands)
+        {
+            <tr class="even pointer">
+                @if (Model.UsuarioAutorizado())
+                {
+                    <td class="a-center ">
+                        <input type="checkbox" class="flat" name="table_records" data-est=@est.Ranch_ID data-original-title=@est.Ch_Organization_ID>
+                    </td>
+                }
+
+                <td class=" ">@est.Ranch_ID</td>
+                <td class=" ">@est.Ch_Organization_ID</td>
+                <td class=" ">@est.Company_Rut</td>
+                <td class=" ">@est.Company_SocialReason</td>
+                <td class=" ">@est.Company_Name</td>
+                @* <td class=" ">@est.CanHaveGateways</td> *@
+                @* <td class=" ">@est.EstanciaCampos.Count</td> *@
+                <td class=" last"><a href="#">View</a></td>
+            </tr>
+                }
+                </tbody>
+              </table>
+            </div>
+            <div></div>
+            @if (Model.UsuarioAutorizado())
+            {
+              <div class="centerInfo">
+                <a class="btn btn-inline btn-small chevaca" id="btn_Borrarestancias">Borrar</a>
+              </div>
+            }
+          </div>
+        </div>
+
+
+
+
+
+

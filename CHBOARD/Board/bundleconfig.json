@@ -1,0 +1,52 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css",
+      "wwwroot/Content/vendors/bootstrap/dist/css/bootstrap.min.css",
+      "wwwroot/Content/vendors/font-awesome/css/font-awesome.min.css",
+      "wwwroot/Content/vendors/font-awesome-5/css/all.min.css",
+      "wwwroot/Content/vendors/nprogress/nprogress.css",
+      "wwwroot/Content/vendors/iCheck/skins/flat/green.css",
+      "wwwroot/Content/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css",
+      "wwwroot/Content/vendors/jqvmap/dist/jqvmap.min.css",
+
+      "wwwroot/Content/build/css/custom.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js",
+      "wwwroot/Content/vendors/jquery/dist/jquery.min.js",
+      "wwwroot/Content/vendors/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "wwwroot/Content/vendors/fastclick/lib/fastclick.js",
+      "wwwroot/Content/vendors/nprogress/nprogress.js",
+      "wwwroot/Content/vendors/Chart.js/dist/Chart.min.js",
+      "wwwroot/Content/vendors/gauge.js/dist/gauge.min.js",
+      "wwwroot/Content/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js",
+      "wwwroot/Content/vendors/iCheck/icheck.min.js",
+      "wwwroot/Content/vendors/skycons/skycons.js",
+      "wwwroot/Content/vendors/Flot/jquery.flot.js",
+      "wwwroot/Content/vendors/Flot/jquery.flot.pie.js",
+      "wwwroot/Content/vendors/Flot/jquery.flot.time.js",
+      "wwwroot/Content/vendors/Flot/jquery.flot.stack.js",
+      "wwwroot/Content/vendors/Flot/jquery.flot.resize.js",
+      "wwwroot/Content/vendors/flot.orderbars/js/jquery.flot.orderBars.js",
+      "wwwroot/Content/vendors/flot-spline/js/jquery.flot.spline.min.js",
+      "wwwroot/Content/vendors/flot.curvedlines/curvedLines.js",
+      "wwwroot/Content/vendors/jqvmap/dist/jquery.vmap.js",
+      "wwwroot/Content/vendors/jqvmap/dist/maps/jquery.vmap.world.js",
+      "wwwroot/Content/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js",
+      "wwwroot/Content/vendors/moment/min/moment.min.js",
+      "wwwroot/Content/vendors/bootstrap-daterangepicker/daterangepicker.js",
+      "wwwroot/Content/build/js/custom.min.js",
+      "wwwroot/js/libs/moment.min.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

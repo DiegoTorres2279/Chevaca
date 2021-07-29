@@ -1,0 +1,177 @@
+@model Board.Models.VM_EstanciaOrg_SP
+
+@section Scripts{
+    <script src="~/Content/vendors/validator/validator.js"></script>
+    <script src="~/js/AddEstanciaOrgSP.js"></script>
+    @* <script src="~/Content/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script> *@
+    <script src="~/Content/vendors/jquery-smartwizard-5/src/js/jquery.smartWizard.js"></script>
+
+    @* <script src="~/Content/vendors/validator/multifield.js"></script> *@
+    @* <script src="~/Content/vendors/attentionJS/dist/attention.js"></script> *@
+
+}
+
+
+@section AddToHead{
+    @* <link rel="stylesheet" href="~/Content/vendors/attentionJS/dist/attention.css" /> *@
+    <link rel="stylesheet" href="~/css/toggle-switchy.css">
+    <link rel="stylesheet" href="~/Content/vendors/jquery-smartwizard-5/src/css/smart_wizard_all.css">
+    <link rel="stylesheet" href="~/css/AddEstanciaOrgSP.css">
+}
+
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Nueva Estancia</h3>
+            </div>
+
+            <div class="title_right">
+                <div class="col-md-5 col-sm-5 form-group row pull-right top_search">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Creando una Estancia</h2>
+        
+                        <div class="clearfix"></div>
+                    </div>
+                  <div class="x_content">
+                    <div id="smartwizard" class="form_wizard wizard_horizontal">
+                        <ul class="nav">
+                            <li>
+                                <a class="nav-link" href="#step-11">
+                                    Step1
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="#step-22">
+                                    Step 2
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <form asp-action="FormEstOrgSP" method="post" id="FormEstOrgSP" class="form-horizontal form-label-left">
+                                <div id="step-11" class="tab-pane" role="tabpanel">
+                                    <span class="section">Informacion de la Estancia</span>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmEstOrg.rut" class="col-form-label col-md-3 col-sm-3  label-align"></label>
+                                        <span asp-validation-for="vmEstOrg.rut" class="required">*</span>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input asp-for="vmEstOrg.rut" class="form-control" id="txb_EstanciaOrg_Rut" data-validate-length-range="12" pattern="numeric" required="required"/>
+                                        </div>
+                                    </div>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmEstOrg.Name" class="col-form-label col-md-3 col-sm-3  label-align"></label>
+                                        <span asp-validation-for="vmEstOrg.Name" class="required">*</span>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input asp-for="vmEstOrg.Name" class="form-control" required="required" id="txb_EstanciaOrg_Nombre"/></div>
+                                    </div>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmEstOrg.DisplayName" class="col-form-label col-md-3 col-sm-3  label-align"></label>
+                                        <span asp-validation-for="vmEstOrg.DisplayName" class="required">*</span>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input asp-for="vmEstOrg.DisplayName" id="txb_EstanciaOrg_DisplayName" class="form-control" required="required"/>
+                                        </div>
+                                    </div>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmEstOrg.CanHaveGateways" class="col-form-label col-md-3 col-sm-3 label-align"></label >
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="toggle-radio">
+                                                <label for="chGateways" class="toggle-switchy" data-color="Chevaca">
+                                                	<input asp-for="vmEstOrg.CanHaveGateways" checked type="checkbox" id="chGateways">
+                                                	<span class="toggle">
+                                                		<span class="switch"></span>
+                                                	</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmEstOrg.MaxDevice" class="col-form-label col-md-3 col-sm-3 label-align"> </label >
+                                        <span asp-validation-for="vmEstOrg.MaxDevice" class="text-danger"></span>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input asp-for="vmEstOrg.MaxDevice" type="number" value="0" id="txb_EstanciaMaxDevice" required="required" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmEstOrg.MaxGateway" class="col-form-label col-md-3 col-sm-3 label-align"></label>
+                                        <span asp-validation-for="vmEstOrg.MaxGateway" class="text-danger"></span>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input asp-for="vmEstOrg.MaxGateway" required="required" value="0" type="number" id="txb_EstanciaMaxGateway" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-22" class="tab-pane" role="tabpanel">
+                                    <span class="section">Service Profile</span>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmSP.Name" class="col-form-label col-md-3 col-sm-3  label-align"></label>
+                                        <span asp-validation-for="vmSP.Name" class="text-danger"></span>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input asp-for="vmSP.Name" class="form-control" id="txb_spName" required="required"/>
+                                        </div>
+                                    </div>
+                                    <div class="field item form-group">
+                                        <label asp-for="vmSP.networkServerID" class="col-form-label col-md-3 col-sm-3 label-align"> </label>
+                                        <span asp-validation-for="vmSP.networkServerID" class="text-danger"></span>
+                                        <div class="col-md-6 col-sm-6">
+                                            <select asp-items="@(new SelectList(Model.vmSP.NSavailables, "id", "name"))" asp-for="vmSP.networkServerID" class="form-control" id="sel_nsID" required>
+                                                <option value="">Choose A Network Server</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class=" field item from-group">
+                                        <label asp-for="vmSP.gatewayMetadata" class="col-form-label col-md-3 col-sm-3 label-align"></label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="toggle-radio">
+                                                <label for="gMetadata" class="toggle-switchy" data-color="Chevaca">
+                                                	<input asp-for="vmSP.gatewayMetadata" type="checkbox" id="gMetadata">
+                                                	<span class="toggle">
+                                                		<span class="switch"></span>
+                                                	</span>
+                                                </label>
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                    <div class="field item from-group">
+                                        <label asp-for="vmSP.networkGeoloc" class="col-form-label col-md-3 col-sm-3 label-align"></label >
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="toggle-radio">
+                                                <label for="nGeoloc" class="toggle-switchy" data-color="Chevaca">
+                                                	<input asp-for="vmSP.networkGeoloc" type="checkbox" id="nGeoloc">
+                                                	<span class="toggle">
+                                                		<span class="switch"></span>
+                                                	</span>
+                                                </label>
+                                            </div>
+                                        </div>                                    
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>      
+    </div>            
+</div>       
+
+@Html.Partial("_Confirm");
+
+@Html.Partial("_Validation");
+
+                
+                
+                
+                
+                
+                
+                
+                

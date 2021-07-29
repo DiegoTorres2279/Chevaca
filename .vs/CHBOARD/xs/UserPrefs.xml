@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{45C3E940-F234-4984-A36B-420857D71500}|Default">
+  <MonoDevelop.Ide.ItemProperties.Board PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Dominio/ChevacaContext.cs">
+    <Files>
+      <File FileName="Board/appsettings.json" Line="1" Column="1" />
+      <File FileName="Board/Models/ErrorViewModel.cs" Line="6" Column="6" />
+      <File FileName="Dominio/AportesProteinas.cs" Line="10" Column="29" />
+      <File FileName="Dominio/ChevacaContext.cs" Line="22" Column="26" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CHBOARD" expanded="True">
+            <Node name="Board" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

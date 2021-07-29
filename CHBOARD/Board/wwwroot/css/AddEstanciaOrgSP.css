@@ -1,0 +1,19 @@
+.btn.btn-wiz.btn-info{
+    background: #34495e;
+    border-color: #34495e;
+}
+
+#btn_wizard_back{
+    background: #34495e;
+    border-color: #34495e;
+}
+
+.sw-theme-progress > .nav .nav-link.active::after{
+    background: #34495e;
+    border-color: #34495e;
+}
+
+.sw-theme-progress > .nav .nav-link.done::after {
+    background: #34495e;
+    border-color: #34495e;
+}

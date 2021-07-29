@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div id="modalFilterOrgs" class="modal fade" role="dialog" xmlns="http://www.w3.org/1999/html">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h4 class="modal-title">Buscar Estancia</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body outer-div">
+                <label>ID</label>
+                <input type="number" value=0 id="txb_filter_id" >
+                <label>Nombre</label>
+                <input type="text" value="" id="txb_filter_name" >
+                <a href="#" class="btn btn-inline btn-small chevaca" id="btn_filtrar">Buscar</a>
+                    <div id="orgsFiltered" class="est_table mt-2">
+                        <table id="filter_table" class="display nowrap dataTable">
+                            <thead> 
+                            <tr><th>#</th><th>Est ID</th><th>Org ID</th><th>RUT</th><th>R.Social</th><th>Nombre</th></tr>
+                            </thead>
+                        
+                            <tbody id="filter_body">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+            </div>
+            
+            
+            <div class="modal-footer">
+                <a class="btn btn-inline btn-primary chevaca" id="btn_select_estancia">Seleccionar</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

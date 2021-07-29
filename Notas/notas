@@ -1,0 +1,18 @@
+background color
+#2A3F54
+
+
+Error Letter Colors
+#73879C
+
+Indice de pendientes
+
+page_500.cshtml
+page_500.css
+
+
+
+Capturar un form con jquery y ejecutar el submit
+
+$(`<a href="javascript:{}" onclick="document.getElementById('CAMBIAR_ESTO').submit();">`+options.labelFinish+'</a>').addClass("buttonFinish")
+
